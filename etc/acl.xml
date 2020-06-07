@@ -4,7 +4,7 @@
 		<resources>
 			<resource id="Magento_Backend::admin">
 				<resource id="Dndeus_Logger::dndeus" sortOrder="10" title="dndeus">
-					<resource id="Dndeus_Logger::logs_index" sortOrder="10" title="logs"/>
+					<resource id="Dndeus_Logger::logs_index" sortOrder="10" title="Logs"/>
 				</resource>
 			</resource>
 		</resources>
