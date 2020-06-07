@@ -3,4 +3,11 @@
     <preference for="Dndeus\Logger\Api\TypesManagementInterface" type="Dndeus\Logger\Model\TypesManagement"/>
     <preference for="Dndeus\Logger\Api\BatchesManagementInterface" type="Dndeus\Logger\Model\BatchesManagement"/>
     <preference for="Dndeus\Logger\Api\ReportsManagementInterface" type="Dndeus\Logger\Model\ReportsManagement"/>
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="dndeusLogger_clear_logs" xsi:type="object">Dndeus\Logger\Console\Command\ClearLogs</item>
+            </argument>
+        </arguments>
+    </type>
 </config>
