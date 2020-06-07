@@ -29,7 +29,7 @@ class InstallSchema implements InstallSchemaInterface
             $table->unsignedInteger('batch_id');
             $table->foreign('batch_id')
                 ->references('id')
-                ->on('eight_batches')
+                ->on('dndeusLogger_batches')
                 ->onDelete('cascade');
             $table->text('data');
             $table->text('message');
