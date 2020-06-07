@@ -9,7 +9,7 @@
             "name": "Mage2Gen"
         }
     ],
-    "minimum-stability": "dev",
+    "version": "1.0.0",
     "require": {
         "doctrine/dbal": "^2.10",
         "illuminate/database": "^6",
