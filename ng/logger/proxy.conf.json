@@ -1,0 +1,7 @@
+{
+  "/rest/*": {
+    "target": "http://local.kouvidis.com:80",
+    "secure": true,
+    "logLevel": "debug"
+  }
+}

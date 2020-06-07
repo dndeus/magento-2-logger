@@ -1,0 +1,8 @@
+<mat-horizontal-stepper [disableRipple]="true" [linear]="true" #stepper>
+  <mat-step>
+    <app-overview (nextStep)="stepper.next()"></app-overview>
+  </mat-step>
+  <mat-step >
+    <app-report-per-batch (goBack)="stepper.previous()"></app-report-per-batch>
+  </mat-step>
+</mat-horizontal-stepper>

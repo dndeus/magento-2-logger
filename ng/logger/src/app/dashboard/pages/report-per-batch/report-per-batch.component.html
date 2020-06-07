@@ -1,0 +1,79 @@
+<div id="demo">
+  <div class="s009">
+    <form>
+      <div class="inner-form">
+
+        <div class="advance-search">
+          <mat-chip-list aria-label="Fish selection">
+            <mat-chip color="accent" selected (click)="goBack.emit()">Go Back</mat-chip>
+            <mat-chip >BATCH ID: {{ report?.batch.id }} - {{ report?.batch.type }}</mat-chip>
+          </mat-chip-list>
+          <div class="row" style="width: 50%; margin-top: 20px;">
+            <mat-form-field>
+              <mat-label>Status</mat-label>
+              <mat-select [(ngModel)]="status" [ngModelOptions]="{standalone: true}">
+                <mat-option>All</mat-option>
+                <mat-option [value]="true">Successful</mat-option>
+                <mat-option [value]="false">Failed</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="row third">
+            <div class="input-field">
+              <div class="result-count">
+<!--                <span>108 </span>results-->
+              </div>
+              <div class="group-btn">
+                <button
+                  (click)="search()"
+                  mat-raised-button color="primary">SEARCH</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- Responsive table starts here -->
+  <!-- For correct display on small screens you must add 'data-title' to each 'td' in your table -->
+  <div class="table-responsive-vertical shadow-z-1" style="position: relative;">
+    <div
+      [hidden]="!loading"
+      style="color: red; font-weight: bold; text-align: center; position: absolute; width: 100%;">Loading...</div>
+    <!-- Table starts here -->
+    <table id="table" class="table table-hover table-mc-light-blue">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Message</th>
+        <th>Status</th>
+        <th width="24%">Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let report of reports" report-row [report]="report">
+      </tr>
+      </tbody>
+      <tfoot *ngIf="of > 0">
+      <tr>
+        <td colspan="2" style="text-align: right;"> {{ from }} – {{ to }} of {{ of }}</td>
+        <td colspan="2" style="border:none;position: relative; top: -14px;">
+          <button
+            [disabled]="prev === null"
+            [style.opacity]="prev === null ? 0.3 : 1"
+            (click)="loadPage(prev)"
+            type="button" class="mat-focus-indicator mat-paginator-navigation-previous mat-icon-button mat-button-base" aria-label="Previous page"><span class="mat-button-wrapper"><svg viewBox="0 0 24 24" focusable="false" class="mat-paginator-icon"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path></svg></span><div matripple="" class="mat-ripple mat-button-ripple mat-button-ripple-round"></div><div class="mat-button-focus-overlay"></div></button>
+          <button
+            [disabled]="next === null"
+            [style.opacity]="next === null ? 0.3 : 1"
+            (click)="loadPage(next)"
+            type="button" class="mat-focus-indicator mat-paginator-navigation-next mat-icon-button mat-button-base" aria-label="Next page"><span class="mat-button-wrapper"><svg viewBox="0 0 24 24" focusable="false" class="mat-paginator-icon"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></span><div matripple="" class="mat-ripple mat-button-ripple mat-button-ripple-round"></div><div class="mat-button-focus-overlay"></div></button>
+        </td>
+      </tr>
+      </tfoot>
+    </table>
+  </div>
+
+</div>
+

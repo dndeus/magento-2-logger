@@ -1,0 +1,16 @@
+<td data-title="ID">{{ report.id }}</td>
+<td data-title="Message">{{ report.message }}</td>
+<td data-title="Status">
+  <ng-container *ngIf="report.completed">
+    <span style="color: green;">Successful</span>
+  </ng-container>
+  <ng-container *ngIf="!report.completed">
+    <span style="color: red;">Failed</span>
+  </ng-container>
+</td>
+<td>
+  <mat-chip-list aria-label="Fish selection">
+    <mat-chip color="accent" selected (click)="openDialog(report)">View Details</mat-chip>
+<!--    <mat-chip color="primary" selected (click)="reRun()">Re-run</mat-chip>-->
+  </mat-chip-list>
+</td>
