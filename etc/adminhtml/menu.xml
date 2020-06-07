@@ -2,6 +2,6 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
 	<menu>
 		<add id="Dndeus::top_level" module="Dndeus_Logger" resource="Magento_Backend::content" sortOrder="9999" title="Dndeus"/>
-		<add action="dndeus/logs/index" id="Dndeus_Logger::logs_index" module="Dndeus_Logger" parent="Dndeus::top_level" resource="Dndeus_Logger::logs_index" sortOrder="9999" title="logs"/>
+		<add action="dndeus/logs/index" id="Dndeus_Logger::logs_index" module="Dndeus_Logger" parent="Dndeus::top_level" resource="Dndeus_Logger::logs_index" sortOrder="9999" title="Logs"/>
 	</menu>
 </config>
