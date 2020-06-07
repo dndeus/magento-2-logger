@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+	<acl>
+		<resources>
+			<resource id="Magento_Backend::admin">
+				<resource id="Dndeus_Logger::dndeus" sortOrder="10" title="dndeus">
+					<resource id="Dndeus_Logger::logs_index" sortOrder="10" title="logs"/>
+				</resource>
+			</resource>
+		</resources>
+	</acl>
+</config>

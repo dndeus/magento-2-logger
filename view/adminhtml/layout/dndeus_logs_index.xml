@@ -1,13 +1,13 @@
 <?xml version="1.0" ?>
 <page layout="admin-1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-	<head>
-		<title>Logs</title>
+    <head>
+        <title>Logs</title>
         <link src="Dndeus_Logger::css/ng-styles.css"/>
         <link src="Dndeus_Logger::js/output/ng-element.js"/>
-	</head>
+    </head>
 	<body>
 		<referenceContainer name="content">
-			<block class="Dndeus\Logger\Block\Adminhtml\Logs\Index" name="dndeus.logger.logs.index" template="Dndeus_Logger::logs/index.phtml"/>
+			<block class="Dndeus\Logger\Block\Adminhtml\Logs\Index" name="logs.index" template="Dndeus_Logger::logs/index.phtml"/>
 		</referenceContainer>
 	</body>
 </page>

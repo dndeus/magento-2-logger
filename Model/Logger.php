@@ -3,6 +3,7 @@
 namespace Dndeus\Logger\Model;
 
 use Dndeus\Logger\Helper\BootEloquent;
+use Dndeus\Logger\Model\Repositories\Batch;
 
 class Logger
 {

@@ -46,7 +46,7 @@ export class AppModule {
       injector: this.injector
     });
 
-    customElements.define('eight-erp-reports', dashboard);
+    customElements.define('dndeus-logger', dashboard);
   }
 
 }

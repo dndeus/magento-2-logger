@@ -1,7 +1,9 @@
 <?php
-namespace Dndeus\Logger\Reports;
+namespace Dndeus\Logger\Model;
 
-use Eight\Erp\Helper\BootEloquent;
+use Dndeus\Logger\Helper\BootEloquent;
+use Dndeus\Logger\Model\Repositories\Batch;
+use Dndeus\Logger\Model\Repositories\Report;
 use Illuminate\Database\Eloquent\Builder;
 
 class ReportsService

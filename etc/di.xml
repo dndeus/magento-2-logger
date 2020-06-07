@@ -6,7 +6,7 @@
     <type name="Magento\Framework\Console\CommandList">
         <arguments>
             <argument name="commands" xsi:type="array">
-                <item name="dndeusLogger_clear_logs" xsi:type="object">Dndeus\Logger\Console\Command\ClearLogs</item>
+                <item name="dndeus_clear_logs" xsi:type="object">Dndeus\Logger\Console\Command\ClearLogs</item>
             </argument>
         </arguments>
     </type>

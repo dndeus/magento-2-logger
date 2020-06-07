@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
 	<router id="admin">
-		<route frontName="logs" id="logs">
+		<route frontName="dndeus" id="dndeus">
 			<module before="Magento_Backend" name="Dndeus_Logger"/>
 		</route>
 	</router>

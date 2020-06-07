@@ -11,17 +11,17 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   public getTypes() {
-    return this.http.get('/rest/V1/eight8-erp/types');
+    return this.http.get('/rest/V1/dndeus/logger/types');
   }
 
   public getBatches(args = null) {
-    return this.http.post('/rest/V1/eight8-erp/batches', {
+    return this.http.post('/rest/V1/dndeus/logger/batches', {
       data: args
     });
   }
 
   public getReports(args = null) {
-    return this.http.post('/rest/V1/eight8-erp/reports', {
+    return this.http.post('/rest/V1/dndeus/logger/reports', {
       data: args
     });
   }

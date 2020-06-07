@@ -1,13 +1,8 @@
 <?php
-
+declare(strict_types=1);
 
 namespace Dndeus\Logger\Block\Adminhtml\Logs;
 
-/**
- * Class Index
- *
- * @package Dndeus\Logger\Block\Adminhtml\Logs
- */
 class Index extends \Magento\Backend\Block\Template
 {
 

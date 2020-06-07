@@ -18,24 +18,29 @@ class InstallSchema implements InstallSchemaInterface
         $setup->startSetup();
 
         $this->boot();
-        Manager::schema()->create('dndeusLogger_batches', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('type');
-            $table->timestamps();
-        });
 
-        Manager::schema()->create('dndeusLogger_reports', function (Blueprint $table) {
-            $table->increments('id');
-            $table->unsignedInteger('batch_id');
-            $table->foreign('batch_id')
-                ->references('id')
-                ->on('dndeusLogger_batches')
-                ->onDelete('cascade');
-            $table->text('data');
-            $table->text('message');
-            $table->boolean('completed');
-            $table->timestamps();
-        });
+        if (!Manager::schema()->hasTable('dndeus_logger_batches')) {
+            Manager::schema()->create('dndeus_logger_batches', function (Blueprint $table) {
+                $table->increments('id');
+                $table->string('type');
+                $table->timestamps();
+            });
+        }
+
+        if (!Manager::schema()->hasTable('dndeus_logger_reports')) {
+            Manager::schema()->create('dndeus_logger_reports', function (Blueprint $table) {
+                $table->increments('id');
+                $table->unsignedInteger('batch_id');
+                $table->foreign('batch_id')
+                    ->references('id')
+                    ->on('dndeus_logger_batches')
+                    ->onDelete('cascade');
+                $table->text('data');
+                $table->text('message');
+                $table->boolean('completed');
+                $table->timestamps();
+            });
+        }
 
         $setup->endSetup();
     }

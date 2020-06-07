@@ -1,7 +1,7 @@
 <?php
 namespace Dndeus\Logger\Model;
 
-use Dndeus\Logger\Reports\ReportsService;
+use Dndeus\Logger\Model\ReportsService;
 
 class TypesManagement implements \Dndeus\Logger\Api\TypesManagementInterface
 {

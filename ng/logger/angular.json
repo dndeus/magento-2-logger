@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "erp-bridge-reports": {
+    "logger": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "ngx-build-plus:browser",
           "options": {
-            "outputPath": "dist/erp-bridge-reports",
+            "outputPath": "dist/logger",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -80,18 +80,18 @@
         "serve": {
           "builder": "ngx-build-plus:dev-server",
           "options": {
-            "browserTarget": "erp-bridge-reports:build"
+            "browserTarget": "logger:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "erp-bridge-reports:build:production"
+              "browserTarget": "logger:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "erp-bridge-reports:build"
+            "browserTarget": "logger:build"
           }
         },
         "test": {
@@ -129,16 +129,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "erp-bridge-reports:serve"
+            "devServerTarget": "logger:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "erp-bridge-reports:serve:production"
+              "devServerTarget": "logger:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "erp-bridge-reports"
+  "defaultProject": "logger"
 }
