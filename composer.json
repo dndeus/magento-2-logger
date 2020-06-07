@@ -10,6 +10,7 @@
         }
     ],
     "version": "1.0.0",
+    "minimum-stability": "1.0.0",
     "require": {
         "doctrine/dbal": "^2.10",
         "illuminate/database": "^6",
