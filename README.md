@@ -1,51 +1,27 @@
-# Mage2 Module Dndeus Logger
-
-    ``dndeus/module-logger``
-
- - [Main Functionalities](#markdown-header-main-functionalities)
- - [Installation](#markdown-header-installation)
- - [Configuration](#markdown-header-configuration)
- - [Specifications](#markdown-header-specifications)
- - [Attributes](#markdown-header-attributes)
-
-
-## Main Functionalities
-
-
 ## Installation
-\* = in production please use the `--keep-generated` option
 
-### Type 1: Zip file
+`composer require dndeus/module-logger`
 
- - Unzip the zip file in `app/code/Dndeus`
- - Enable the module by running `php bin/magento module:enable Dndeus_Logger`
- - Apply database updates by running `php bin/magento setup:upgrade`\*
- - Flush the cache by running `php bin/magento cache:flush`
+## Magento installation
 
-### Type 2: Composer
+```
+bin/magento module:enable Dndeus_Logger
 
- - Make the module available in a composer repository for example:
-    - private repository `repo.magento.com`
-    - public repository `packagist.org`
-    - public github repository as vcs
- - Add the composer repository to the configuration by running `composer config repositories.repo.magento.com composer https://repo.magento.com/`
- - Install the module composer by running `composer require dndeus/module-logger`
- - enable the module by running `php bin/magento module:enable Dndeus_Logger`
- - apply database updates by running `php bin/magento setup:upgrade`\*
- - Flush the cache by running `php bin/magento cache:flush`
+bin/magento setup:upgrade
+```
 
+## Usage
 
-## Configuration
+```
+$logger = new Logger();
 
+$data = ['name' => 'Test'];
 
+$logger->forType('products') // this must be snakecase sting or single word
+       ->success($data,'Processing the given data was successful');
 
+$logger->forType('products_data') // this must be snakecase sting or single word
+       ->failed($data,'Processing the given data failed for whatever reason');
+```
 
-## Specifications
-
-
-
-
-## Attributes
-
-
-
+## View the logs in your magento admin area
